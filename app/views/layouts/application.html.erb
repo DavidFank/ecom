@@ -13,6 +13,12 @@
   <body>
 
   <%= render 'layouts/navbar' %>
+
+  <% unless flash[:alert].nil? %>
+    <div class="alert alert-danger fade-in"><%= flash[:alert] %></div>
+  <% end %>
+
+  
   <div class="container">
     <%= yield %>
     </div>

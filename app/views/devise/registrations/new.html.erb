@@ -3,9 +3,49 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="form-group">
+  <%= f.label :name %> <br>
+  <%= f.text_field :name, autofocus: true, class: "form-control half-width", placeholder: "First & Last" %>
+  </div>
+
+<div class="form-group">
+<%= f.label :username %><br>
+<%= f.text_field :username, class: "form-control half-width", placeholder: "Username" %>
+</div>
+
+<div class="form-group">
+<%= f.label :birthday %><br>
+<%= f.date_field :birthday %>
+</div>
+
+<div class="form-group">
+<%= f.label :address %><br>
+<%= f.text_field :address, class: "form-control half-width", placeholder: "Number & Street" %>
+</div>
+
+<div class="form-group">
+<%= f.label :zip %><br>
+<%= f.number_field :zip, class: "form-control half-width", placeholder: "Zip code" %>
+</div>
+
+<div class="form-group">
+<%= f.label :city %><br>
+<%= f.text_field :city, class: "form-control half-width", placeholder: "City" %>
+</div>
+
+<div class="form-group">
+<%= f.label :state %> <br>
+<%= f.text_field :state, class: "form-control half-width", placeholder: "State" %>
+</div>
+
+ <div class="form-group">
+ <%= f.label :phone %><br>
+ <%= f.text_field :phone, class: "form-group half-width", placeholder: "Phone" %>
+ </div>
+
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">
@@ -19,6 +59,10 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field hidden">
+  <%= f.text_field :role, value: "guest" %>
   </div>
 
   <div class="actions">
